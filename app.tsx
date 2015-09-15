@@ -1,25 +1,9 @@
-import * as React from 'react';
-
-interface Props {
-  txt: string;
-}
-
-interface State{
-  count: number;
-}
-
-
-// Render a simple React component into the body.
-class App extends React.Component<Props, State> {
-  constructor(props){
-    super(props)
+class App extends React.Component {
+  constructor(){
+    super()
     this.state = {count: 0}
     this.increment = this.increment.bind(this);
   }
-  static defaultProps = {
-    txt: 'default props txt'
-  }
-
   increment(){
     this.setState({count: this.state.count+1})
   }
@@ -27,16 +11,14 @@ class App extends React.Component<Props, State> {
     console.log('will mount')
   }
   render(){
-    return (
-      <div>
-      <h1>You have said hello {this.state.count} times.</h1>
-      <button onClick={this.increment}>{this.props.txt} - {this.state.count}</button>
-      </div>
-    )
+    return <button onClick={this.increment}>{this.props.txt} - {this.state.count}</button>
   }
   componentDidMount(){
     console.log('mounted')
   }
 }
+
+App.defaultProps = {txt: 'default props txt'}
+App.propTypes = {txt: React.PropTypes.number}
 
 React.render(<App txt="Hello world!" />, document.body);
