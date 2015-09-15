@@ -19,6 +19,6 @@
     "files": [
         "./typings/react/react.d.ts",
         "./typings/tsd.d.ts",
-        "./index.tsx"
+        "./app.tsx"
     ]
 }

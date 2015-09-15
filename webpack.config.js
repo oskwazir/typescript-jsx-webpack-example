@@ -14,7 +14,7 @@ module.exports = {
     }]
   },
   entry: {
-    // Set index.tsx as application entry point.
-    app: './index.tsx'
+    // Set app.tsx as application entry point.
+    app: './app.tsx'
   }
 };
